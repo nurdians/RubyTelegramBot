@@ -35,8 +35,8 @@ get '/getUsers' do
     @listName+='-'+x['name']+'('+x['email']+")\n"
   end 
 
-  bot = TelegramBot.new(token: '894058393:AAEPHq0MW6FXUWC5sNWIJsTNBP9uNPlZbic')
-  channel = TelegramBot::Channel.new(id: -357665531) #-357665531 (Devices farmers), -371604616 warung DF, 591524801 private
+  bot = TelegramBot.new(token: '891169911:AAHUaLVENxodctIMvNvbrce6qZIzDaaBtXw')
+  channel = TelegramBot::Channel.new(id: -357665531) #-357665531 (Devices farmers), -371604616 warung DF,591524801 private 
   message = TelegramBot::OutMessage.new
   message.chat = channel
   message.text = @listName
