@@ -50,3 +50,8 @@ get '/getUsers' do
 end
 
 
+delete '/deleteUnusedLog' do
+  conn=r.connect(:host=>"192.168.38.121", :port=>28015)
+  r.db('stf').table('logs').filter{ |doc| doc['message'].match("^Now owned by ").not()}.delete().run(conn)
+  conn.close
+end
